@@ -35,7 +35,7 @@ enum class TimeE
     TWELVE_PM,
     THREE_PM,
     SIX_PM,
-    NINE_POM,
+    NINE_PM,
     TWELEVE_AM
 };
 
