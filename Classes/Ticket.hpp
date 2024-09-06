@@ -27,7 +27,7 @@ public:
     void ChangeTime(const string &time) { m_time = time; }
     const string &GetTime() const { return m_time; }
     // void SetSeat(const string &seat) { m_seat = seat; }
-    // const string &GetSeat() const { return m_seat; }
+    //  const string &GetSeat() const { return m_seat; }
     int generateUniqueId() { return m_nextId++; }
     float getTicketPrice() const;
     void printTicket() const;

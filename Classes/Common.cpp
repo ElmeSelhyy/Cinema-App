@@ -1,5 +1,5 @@
 // COMMON.cpp
-#include "COMMON.hpp"
+#include "Common.hpp"
 
 DayE stringToDayE(const string &day)
 {

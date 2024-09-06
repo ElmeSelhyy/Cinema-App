@@ -8,9 +8,18 @@ using namespace std;
 #include "Classes/Cinema.hpp"
 #include "Classes/Ticket.hpp"
 #include "Classes/Customer.hpp"
-
+#include "RegularSeat.hpp"
+#include "PremiumSeat.hpp"
+#include "VipSeat.hpp"
 int main()
 {
+    // Create SeatType instances
+    std::vector<std::vector<SeatType *>> seatTypes = {
+        {new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new VipSeat()},
+        {new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new VipSeat()},
+        {new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new VipSeat()},
+        {new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new PremiumSeat(), new RegularSeat(), new RegularSeat(), new VipSeat()},
+    };
     // Create movie instances
     MovieC movie1("The Shawshank Redemption", {MovieGenreE::DRAMA}, 9.3, {{DayE::FRIDAY, TimeE::SIX_PM}});
     MovieC movie2("The Godfather", {MovieGenreE::DRAMA}, 9.2, {{DayE::SATURDAY, TimeE::NINE_PM}});
