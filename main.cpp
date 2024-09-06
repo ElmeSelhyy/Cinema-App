@@ -26,19 +26,16 @@ int main()
     CustomerC customer2("Ahmed Yasser", "AhmedYasser@gmail.com,", "01021613881");
     CustomerC customer3("Ibrahim Nashaat", "IbrahimNashaat@gmail.com", "01021613881");
 
-    // Add movies to customer history
-    customer1.AddMovie(movie1);
-    customer2.AddMovie(movie2);
-    customer3.AddMovie(movie3);
-
     // Create ticket instances
-    TicketC ticket1(&customer1, &movie1, "HALL_1", "FRIDAY", "SIX_PM");
     TicketC ticket2(&customer2, &movie2, "HALL_2", "SATURDAY", "NINE_PM");
-    TicketC ticket3(&customer3, &movie3, "HALL_3", "SUNDAY", "THREE_PM");
+    TicketC ticket3(&customer2, &movie3, "HALL_3", "SUNDAY", "THREE_PM");
 
-    ticket1.printTicket();
-    cout << "----------------------" << endl;
-    ticket2.printTicket();
-    cout << "----------------------" << endl;
-    ticket3.printTicket();
+    /* ticket1.printTicket();
+     cout << "----------------------" << endl;
+     ticket2.printTicket();
+     cout << "----------------------" << endl;
+     ticket3.printTicket();
+     */
+    customer2.printHistory();
+    return 0;
 }

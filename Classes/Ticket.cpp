@@ -23,8 +23,3 @@ void TicketC::printTicket() const
     cout << "Time: " << m_time << endl;
     cout << "Price: " << getTicketPrice() << endl;
 }
-
-int TicketC::generateUniqueId()
-{
-    return m_nextId++;
-}

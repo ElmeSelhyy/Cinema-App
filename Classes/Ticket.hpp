@@ -14,20 +14,21 @@ class TicketC
 {
 public:
     TicketC(CustomerC *customer, MovieC *movie, const string &hall, const string &day, const string &time)
-        : m_customer(customer), m_movie(movie), m_hall(hall), m_day(day), m_time(time)
+        : m_customer(customer), m_movie(movie), m_hall(hall), m_day(day), m_time(time), m_id(generateUniqueId())
+
     {
-        m_id = generateUniqueId();
+        m_customer->AddMovie(*m_movie);
     }
     const string &GetMovieTitle() const { return m_movie->GetTitle(); }
-    void SetHall(const string &hall) { m_hall = hall; }
+    void ChangeHall(const string &hall) { m_hall = hall; }
     const string &GetHall() const { return m_hall; }
-    void SetDay(const string &day) { m_day = day; }
+    void ChangeDay(const string &day) { m_day = day; }
     const string &GetDay() const { return m_day; }
-    void SetTime(const string &time) { m_time = time; }
+    void ChangeTime(const string &time) { m_time = time; }
     const string &GetTime() const { return m_time; }
     // void SetSeat(const string &seat) { m_seat = seat; }
     // const string &GetSeat() const { return m_seat; }
-    int generateUniqueId();
+    int generateUniqueId() { return m_nextId++; }
     float getTicketPrice() const;
     void printTicket() const;
 

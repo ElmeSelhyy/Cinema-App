@@ -15,11 +15,12 @@ public:
 	{
 	}
 	const string &GetMail() const { return m_mail; }
-	void ChangePhoneNumber(uint8_t phoneNum) { m_phoneNum = phoneNum; }
+	void ChangePhoneNumber(string phoneNum) { m_phoneNum = phoneNum; }
 	const string &GetPhoneNum() const { return m_phoneNum; }
 	void AddMovie(const MovieC &movie) { m_history.emplace_back(movie); }
 	const vector<MovieC> &GetHistory() const { return m_history; }
 	const string &GetName() const { return m_name; }
+	void printHistory() const;
 
 private:
 	vector<MovieC> m_history;
