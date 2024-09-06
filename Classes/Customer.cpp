@@ -1,4 +1,5 @@
 #include "Customer.hpp"
+
 void CustomerC::printHistory() const
 {
     cout << "Customer Name: " << m_name << endl;
@@ -9,6 +10,5 @@ void CustomerC::printHistory() const
     {
         cout << "Movie Title: " << movie.GetTitle() << endl;
         cout << "Movie Rating: " << movie.GetRating() << endl;
-        cout << "Movie Showtimes: " << endl;
     }
 }

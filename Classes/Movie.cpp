@@ -14,3 +14,11 @@ string MovieC::GetGenreStr()
     }
     return genreStr;
 }
+
+void MovieC::printShowTimes() const
+{
+    for (const auto &showTime : m_showTimes)
+    {
+        cout << "Day: " << dayToStr(showTime.m_movieDay) << " Time: " << timeToStr(showTime.m_time) << endl;
+    }
+}

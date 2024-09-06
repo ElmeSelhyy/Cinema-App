@@ -1,23 +1,12 @@
 #ifndef MOVIE_HPP
 #define MOVIE_HPP
-
+#include <iostream>
 #include <string>
 #include <vector>
 #include <unordered_map>
 
 using namespace std;
 #include "Common.hpp"
-
-enum class MovieGenreE
-{
-    ACTION,
-    COMEDY,
-    DRAMA,
-    THRILLER,
-    HORROR,
-    SCIENCE_FICTION,
-    ROMANCE
-};
 
 struct ShowTimeS
 {
@@ -28,7 +17,8 @@ struct ShowTimeS
 class MovieC
 {
 public:
-    MovieC(const string &title, const vector<MovieGenreE> &genre, float rating, const vector<ShowTimeS> &showTime) : m_title(title), m_genre(genre), m_rating(rating), m_showTimes(showTime)
+    MovieC(const string &title, const vector<MovieGenreE> &genre, float rating, const vector<ShowTimeS> &showTime)
+        : m_title(title), m_genre(genre), m_rating(rating), m_showTimes(showTime)
     {
     }
     void SetTitle(const string &title) { m_title = title; }
@@ -39,8 +29,9 @@ public:
     void SetRating(float rating) { m_rating = rating; }
     const float &GetRating() const { return m_rating; }
     void AddShowTime(const ShowTimeS &showTime) { m_showTimes.emplace_back(showTime); }
-    const vector<ShowTimeS> &GetShowTime() const { return m_showTimes; }
+    const vector<ShowTimeS> &GetShowTimes() const { return m_showTimes; }
     string GetGenreStr();
+    void printShowTimes() const;
 
 private:
     string m_title;

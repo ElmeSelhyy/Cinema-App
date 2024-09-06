@@ -42,10 +42,24 @@ enum class HallE
     HALL_2,
     HALL_3
 };
+enum class MovieGenreE
+{
+    ACTION,
+    COMEDY,
+    DRAMA,
+    THRILLER,
+    HORROR,
+    SCIENCE_FICTION,
+    ROMANCE
+};
 
 // Function declarations
 DayE stringToDayE(const string &day);
 TimeE stringToTimeE(const string &time);
 HallE stringToHallE(const string &hall);
+string dayToStr(DayE day);
+string timeToStr(TimeE time);
+string hallToStr(HallE hall);
+string genreToStr(MovieGenreE genre);
 
 #endif
