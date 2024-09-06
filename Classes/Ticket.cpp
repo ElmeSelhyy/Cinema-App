@@ -1,5 +1,6 @@
 #include "Ticket.hpp"
-int TicketC::m_id = 1;
+int TicketC::m_nextId = 1;
+
 float TicketC::getTicketPrice() const
 {
     TimeE time = stringToTimeE(m_time);
@@ -21,4 +22,9 @@ void TicketC::printTicket() const
     cout << "Day: " << m_day << endl;
     cout << "Time: " << m_time << endl;
     cout << "Price: " << getTicketPrice() << endl;
+}
+
+int TicketC::generateUniqueId()
+{
+    return m_nextId++;
 }

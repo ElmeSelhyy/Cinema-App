@@ -27,14 +27,15 @@ public:
     const string &GetTime() const { return m_time; }
     // void SetSeat(const string &seat) { m_seat = seat; }
     // const string &GetSeat() const { return m_seat; }
-    int generateUniqueId() { return m_id++; }
+    int generateUniqueId();
     float getTicketPrice() const;
     void printTicket() const;
 
 private:
     CustomerC *m_customer;
     MovieC *m_movie;
-    static int m_id;
+    int m_id;
+    static int m_nextId;
     string m_hall;
     string m_day;
     string m_time;
