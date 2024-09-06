@@ -8,7 +8,6 @@
 
 #include "Movie.hpp"
 #include "Customer.hpp"
-#include "Common.hpp"
 
 class CinemaC
 {
@@ -19,14 +18,19 @@ public:
     void AddUser(const CustomerC &user) { m_users.emplace_back(user); }
     const vector<CustomerC> &GetUsers() const { return m_users; }
 
+    const map<HallE, float> &GetHallPrice() const { return c_HallPrice; }
+    const map<DayE, float> &GetDayPrice() const { return c_DayPrice; }
+    const map<TimeE, float> &GetTimePrice() const { return c_TimePrice; }
+
 private:
     static unique_ptr<CinemaC> m_cinemaInst;
+
+    vector<MovieC> m_movies;
+    vector<CustomerC> m_users;
 
 private:
     const vector<unsigned int> m_seatPrice = {
         {60, 90, 90, 130, 130, 90, 90, 60}};
-    vector<MovieC> m_movies;
-    vector<CustomerC> m_users;
     const map<HallE, float> c_HallPrice = {
         {HallE::HALL_1, 20},
         {HallE::HALL_2, 40},

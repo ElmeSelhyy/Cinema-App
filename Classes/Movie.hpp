@@ -6,6 +6,7 @@
 #include <unordered_map>
 
 using namespace std;
+#include "Common.hpp"
 
 enum class MovieGenreE
 {
@@ -16,27 +17,6 @@ enum class MovieGenreE
     HORROR,
     SCIENCE_FICTION,
     ROMANCE
-};
-
-enum class DayE
-{
-    SATURDAY,
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY
-};
-
-enum class TimeE
-{
-    NINE_AM,
-    TWELVE_PM,
-    THREE_PM,
-    SIX_PM,
-    NINE_PM,
-    TWELEVE_AM
 };
 
 struct ShowTimeS
