@@ -13,13 +13,12 @@ using namespace std;
 class TicketC
 {
 public:
-    TicketC(CustomerC *customer, const string &movieTitle, const string &hall, const string &day, const string &time)
-        : m_customer(customer), m_movieTitle(movieTitle), m_hall(hall), m_day(day), m_time(time)
+    TicketC(CustomerC *customer, MovieC *movie, const string &hall, const string &day, const string &time)
+        : m_customer(customer), m_movie(movie), m_hall(hall), m_day(day), m_time(time)
     {
         m_id = generateUniqueId();
     }
-    void SetMovieTitle(const string &movieTitle) { m_movieTitle = movieTitle; }
-    const string &GetMovieTitle() const { return m_movieTitle; }
+    const string &GetMovieTitle() const { return m_movie->GetTitle(); }
     void SetHall(const string &hall) { m_hall = hall; }
     const string &GetHall() const { return m_hall; }
     void SetDay(const string &day) { m_day = day; }
@@ -30,11 +29,12 @@ public:
     // const string &GetSeat() const { return m_seat; }
     int generateUniqueId() { return m_id++; }
     float getTicketPrice() const;
+    void printTicket() const;
 
 private:
     CustomerC *m_customer;
+    MovieC *m_movie;
     static int m_id;
-    string m_movieTitle;
     string m_hall;
     string m_day;
     string m_time;

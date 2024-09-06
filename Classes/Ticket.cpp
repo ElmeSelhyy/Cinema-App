@@ -11,3 +11,14 @@ float TicketC::getTicketPrice() const
     float price = cinema->GetHallPrice().at(hall) + cinema->GetDayPrice().at(day) + cinema->GetTimePrice().at(time);
     return price;
 }
+
+void TicketC::printTicket() const
+{
+    cout << "Ticket ID: " << m_id << endl;
+    cout << "Customer Name: " << m_customer->GetName() << endl;
+    cout << "Movie Title: " << m_movie->GetTitle() << endl;
+    cout << "Hall: " << m_hall << endl;
+    cout << "Day: " << m_day << endl;
+    cout << "Time: " << m_time << endl;
+    cout << "Price: " << getTicketPrice() << endl;
+}

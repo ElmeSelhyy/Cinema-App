@@ -28,8 +28,7 @@ int main()
     customer1.AddMovie(movie1);
 
     // Create ticket instances
-    TicketC ticket1(&customer1, "The Shawshank Redemption", "HALL_1", "FRIDAY", "SIX_PM");
+    TicketC ticket1(&customer1, &movie1, "HALL_1", "FRIDAY", "SIX_PM");
 
-    ticket1.getTicketPrice();
-    cout << "Ticket price: " << ticket1.getTicketPrice() << endl;
+    ticket1.printTicket();
 }

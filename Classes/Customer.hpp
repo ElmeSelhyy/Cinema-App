@@ -19,6 +19,7 @@ public:
 	const string &GetPhoneNum() const { return m_phoneNum; }
 	void AddMovie(const MovieC &movie) { m_history.emplace_back(movie); }
 	const vector<MovieC> &GetHistory() const { return m_history; }
+	const string &GetName() const { return m_name; }
 
 private:
 	vector<MovieC> m_history;
